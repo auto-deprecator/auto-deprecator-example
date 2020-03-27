@@ -31,8 +31,8 @@ You just need a Python 3.x running in your machine.
 Example
 =======
 
-To run all the warning examples, please run
+To run all the deprecation examples, please run
 
 .. code-block:: console
 
-  PYTHONWARNINGS=default::DeprecationWarning python test_warning.py
+  PYTHONWARNINGS=default::DeprecationWarning python test_deprecate_from_util.py
