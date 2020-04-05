@@ -16,8 +16,22 @@ class TestClassA:
 
     class TestClassD:
 
-        @property
+        @classmethod
         @deprecate(expiry='1.0.0', version_module=__name__.split('.')[0],
                    error_handler=print)
-        def d(self):
+        def d(cls):
             return 'c'
+
+    class TestClassE:
+
+        @property
+        @deprecate(expiry='0.0.0', version_module=__name__.split('.')[0],
+                   error_handler=print)
+        def e(self):
+            return 'e'
+
+    @property
+    @deprecate(expiry='0.0.0', version_module=__name__.split('.')[0],
+               error_handler=print)
+    def a(self):
+        return 'a'
