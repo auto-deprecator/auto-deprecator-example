@@ -5,7 +5,6 @@ def run_deprecate_func():
     from auto_deprecator_example.deprecate_from_utils.func import (
         warn_from_utils,
         warn_from_utils_and_module_version,
-        error_with_warning_handler,
     )
 
     print('===============================================================')
@@ -18,11 +17,18 @@ def run_deprecate_func():
     print('Warning (Current version from module, Expiry = 2.0)')
     print('===============================================================')
     warn_from_utils_and_module_version()
-    print('===============================================================')
-    print('Error with warning handler (Current version from module, Expiry = 2.0)')
-    print('===============================================================')
-    error_with_warning_handler()
-    print('===============================================================')
+
+    try:
+        from auto_deprecator_example.deprecate_from_utils.func import (
+            error_with_warning_handler,
+        )
+        print('===============================================================')
+        print('Error with warning handler (Current version from module, Expiry = 2.0)')
+        print('===============================================================')
+        error_with_warning_handler()
+        print('===============================================================')
+    except ImportError:
+        print('Function error_with_warning_handler is deprecated')
 
 
 def run_deprecate_class():
@@ -34,9 +40,12 @@ def run_deprecate_class():
     print('Warning (Current version = 1.0.0, Expiry = 2.0)')
     print('===============================================================')
     TestClassA.TestClassB().c
-    print('===============================================================')
-    TestClassA.TestClassD().d()
-    print('===============================================================')
+    try:
+        print('===============================================================')
+        TestClassA.TestClassD().d()
+        print('===============================================================')
+    except AttributeError:
+        print('TestClass D is depcreated')
 
 
 
