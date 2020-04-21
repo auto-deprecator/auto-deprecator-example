@@ -7,6 +7,11 @@ from auto_deprecator_example.utils.auto_deprecator.deprecate import deprecate
 LOGGER = logging.getLogger(__name__)
 
 
+@deprecate(expiry='2.0', current='1.0')
+def hello_world():
+    print('Hello world')
+
+
 @deprecate(expiry='2.0', current=__version__)
 def warn_from_utils():
     print('It is a warning from utils')
