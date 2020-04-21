@@ -1,4 +1,4 @@
-from auto_deprecator_example.utils.auto_deprecator.deprecate import deprecate
+from auto_deprecator_example.utils.auto_deprecator import deprecate
 
 
 class TestClassA:

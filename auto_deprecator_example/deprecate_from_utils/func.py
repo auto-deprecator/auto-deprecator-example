@@ -2,7 +2,7 @@ import logging
 
 from auto_deprecator_example import __version__
 
-from auto_deprecator_example.utils.auto_deprecator.deprecate import deprecate
+from auto_deprecator_example.utils.auto_deprecator import deprecate
 
 LOGGER = logging.getLogger(__name__)
 
