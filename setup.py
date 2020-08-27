@@ -17,9 +17,9 @@ requirements = [
     'docopt',
 ]
 
-setup_requirements = [ ]
-
-test_requirements = [ ]
+test_requirements = [
+    'pytest',
+]
 
 setup(
     author="Gavin Chan",
@@ -38,15 +38,15 @@ setup(
     ],
     description="Auto deprecator example",
     install_requires=requirements,
+    extras_require={
+        'test': test_requirements
+    },
     license="MIT license",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
     keywords='auto_deprecator_example',
     name='auto_deprecator_example',
     packages=find_packages(include=['auto_deprecator_example', 'auto_deprecator_example.*']),
-    setup_requires=setup_requirements,
-    test_suite='tests',
-    tests_require=test_requirements,
     url='https://github.com/gavincyi/auto_deprecator_example',
     version=__version__,
     zip_safe=False,
