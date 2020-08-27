@@ -4,13 +4,18 @@
 
 from setuptools import setup, find_packages
 
+from auto_deprecator_example import __version__
+
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [ ]
+requirements = [
+    'auto-deprecator',
+    'docopt',
+]
 
 setup_requirements = [ ]
 
@@ -43,6 +48,10 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/gavincyi/auto_deprecator_example',
-    version='1.0.0',
+    version=__version__,
     zip_safe=False,
+    entry_points="""
+        [console_scripts]
+        hello-world-app = auto_deprecator_example.cli.hello_world_app:main
+    """,
 )
