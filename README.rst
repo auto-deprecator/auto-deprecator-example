@@ -50,6 +50,25 @@ The functions in the source codes are deprecated as they are expired regarding t
   #       modified:   auto_deprecator_example/deprecate_from_utils/func.py
   #
 
+To run the unit testing via `pytest`, first install the package in `test` mode, i.e.
+
+.. code-block:: console
+
+  $ pip install .[test]
+
+then running pytest will throw out warning by default
+
+.. code-block:: console
+
+  $ pytest tests/
+
+while running the option ``-W error::DeprecationWarning`` will turn the warning to error
+
+.. code-block:: console
+
+  $ pytest tests/ -W error::DeprecationWarning
+
+
 To update the auto deprecation package in the module `utils`
 
 .. code-block:: console
